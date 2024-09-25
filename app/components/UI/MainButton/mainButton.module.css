@@ -1,0 +1,10 @@
+.about__info_button {
+    font-family: "MainFont";
+    z-index: 100;
+    color: #ffffff;
+    background-color: var(--main-button-color);
+    padding: 9px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    border-color: transparent;
+  }

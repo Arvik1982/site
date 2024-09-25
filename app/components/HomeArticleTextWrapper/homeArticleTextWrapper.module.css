@@ -1,0 +1,10 @@
+.article__text_container{
+    z-index: 100;
+    width: 90%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color:var(--third-text-color) ;
+
+  }

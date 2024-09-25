@@ -1,0 +1,33 @@
+.container__picture {
+    position: relative;
+    width: 90px;
+    height: 90px;
+  }
+  .about__info_avatar {
+    position: absolute;
+    z-index: 1000;
+    display: flex;
+    bottom: 30px;
+    left: 110px;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 90px;
+    gap: 10px;
+    border-radius: 100px;
+    background-color: rgba(240, 250, 255, 1);
+    border: 10px solid rgb(75, 164, 208);
+     }
+  
+  .info__avatar_img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    object-fit: cover;
+  }
+  .about__info_avatar:hover {
+    width: 210px;
+    height: 210px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+  }

@@ -1,95 +1,116 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
 import styles from "./page.module.css";
+import img from "./public/standart_img.png";
+import home_data from "./mock/home_data.json";
+import HomeSectionWrapper from "./components/HomeSectionWrapper/HomeSectionWrapper";
+import BackGroundSvg from "./components/BackGroundSvg/BackGroundSvg/BackGroundSvg";
+import MainButton from "./components/UI/MainButton/MainButton";
+import RoundedImage from "./components/RoundedImage/RoundedImage";
+import AdvantageBox from "./components/AdvantageBox/AdvantageBox";
+import BackGroundSquareSvg from "./components/BackGroundSvg/BackGroundSquareSvg/BackGroundSquareSvg";
+import AbilitiesBox from "./components/AbilitiesBox/AbilitiesBox";
+import ScrollX from "./components/ScrollX/ScrollX";
+import AboutCompany from "./components/AboutCompany/AboutCompany";
+import ImageOpener from "./components/ImageOpener/ImadeOpener";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [avatarSrc, setAvatarSrc] = useState(img);
+  const DESCRIPTIONS = home_data.description;
+  const ADVANTAGES = home_data.advantages;
+  const ABILITIES = home_data.abilities;
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  return (
+    <main className={styles.home__container}>
+      <HomeSectionWrapper>
+        <BackGroundSvg />
+        <h1 className={styles.info__text_title}>Центр по важной работе </h1>
+        <RoundedImage img={avatarSrc} />
+        
+        <div className={styles.info__text_container}>
+          <ul className={styles.text__container_description}>
+            {DESCRIPTIONS &&
+              DESCRIPTIONS.map((description, index) => {
+                return (
+                  <li key={index}>
+                    {" "}
+                    <span>{description.description}</span>
+                  </li>
+                );
+              })}
+          </ul>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <MainButton text={"Связаться с нами"} />
+      </HomeSectionWrapper>
+
+      <HomeSectionWrapper>
+        <BackGroundSvg rotation="180" color="#504186" />
+        <h2 className={styles.info__text}>Наши преимущества</h2>
+        <div className={styles.advantages__container}>
+          {ADVANTAGES &&
+            ADVANTAGES.map((advantage, index) => {
+              return (
+                <AdvantageBox
+                  key={index}
+                  index={index}
+                  advantage={advantage.advantage}
+                />
+              );
+            })}
+        </div>
+      </HomeSectionWrapper>
+
+      <HomeSectionWrapper>
+        {" "}
+        <h2
+          style={{ color: "var(--main-text-color)" }}
+          className={styles.info__text}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          О компании:
+        </h2>
+        <BackGroundSquareSvg rotation={"180"} />
+        <AboutCompany/>
+      </HomeSectionWrapper>
+
+      <HomeSectionWrapper>
+        <h2
+          style={{ color: "var(--main-text-color)" }}
+          className={styles.info__text}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          Наши возможности
+        </h2>
+        <BackGroundSquareSvg />
+        <ScrollX>
+          {ABILITIES &&
+            ABILITIES.map((ability, index) => {
+              return (
+                <AbilitiesBox
+                  key={index}
+                  index={index}
+                  ability={ability.ability}
+                />
+              );
+            })}
+        </ScrollX>
+      </HomeSectionWrapper>
+
+      <HomeSectionWrapper>
+      <h2
+          style={{ color: "var(--main-text-color)" }}
+          className={styles.info__text}
         >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          Мои сертификаты
+        </h2>
+        <BackGroundSquareSvg />
+        <div>
+        <ImageOpener src={img}/>
+        </div>
+      </HomeSectionWrapper>
+
+      <HomeSectionWrapper>
+        <BackGroundSquareSvg />
+        contacts
+      </HomeSectionWrapper>
+    </main>
   );
 }
