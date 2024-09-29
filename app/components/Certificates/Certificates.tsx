@@ -9,9 +9,9 @@ type TProps = {
 export default function Certificates({ certificatesArr }: TProps) {
   return (
     <article className={styles.certificates__container}>
-      {certificatesArr.map((cert) => {
+      {certificatesArr.map((cert, index) => {
         return (
-          <div className={styles.certificates__container_element}>
+          <div key={index} className={styles.certificates__container_element}>
             <ImageOpener src={cert.imgCert} />
           </div>
         );
