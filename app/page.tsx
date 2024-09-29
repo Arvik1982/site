@@ -1,9 +1,8 @@
 "use client";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import styles from "./page.module.css";
 import img from "./public/standart_img.png";
 import imgDoggy from "./public/1710836151743.jpg";
-import imgCert1 from "./public/cert_1.jpg";
 import imgCert3 from "./public/cert_3.jpg";
 import home_data from "./mock/home_data.json";
 import HomeSectionWrapper from "./components/HomeSectionWrapper/HomeSectionWrapper";
@@ -20,10 +19,10 @@ import EnvelopeIcon from "./components/Icons/EnvelopIcon";
 import PhoneIcon from "./components/Icons/PhoneIcon";
 import TelegramIcon from "./components/Icons/TelegramIcon";
 import LocationIcon from "./components/Icons/LocationIcon";
-import FrameIcon from "./components/Icons/FrameIcon";
+
 
 export default function Home() {
-  const [avatarSrc, setAvatarSrc] = useState(img);
+  const [avatarSrc] = useState(img);
   const DESCRIPTIONS = home_data.description;
   const ADVANTAGES = home_data.advantages;
   const ABILITIES = home_data.abilities;
@@ -144,7 +143,7 @@ export default function Home() {
             <LocationIcon />{" "}
             <span>
               Юр. адрес: 190013, г. Санкт-Петербург дом № 7, литер A, оф.4000
-              Вход: г. Санкт-Петербург, канал д.90, БЦ "Ной", оф.4
+              Вход: г. Санкт-Петербург, канал д.90, БЦ Ной, оф.4
             </span>
           </p>
 
@@ -159,6 +158,7 @@ export default function Home() {
             <a href="tg://resolve?domain=@kulikovarseniy">@Telegram</a>
           </p>
         </article>
+
         <article className={styles.contacts__container_map}>
           <div className={styles.container__map_map}>
             {!mapLoaded&&<div style={{ zIndex: "1000", border: "none"}}
@@ -175,7 +175,7 @@ export default function Home() {
               />
             )}
 
-            <div id="map" style={{ width: "100%", height: "400px" }} />
+          
           </div>
         </article>
       </HomeSectionWrapper>
