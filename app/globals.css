@@ -53,4 +53,7 @@ a {
     --main-text-color:white;
     --third-text-color:white;
   }
+  html, body{
+    background-color: rgb(255, 255, 255) !important;
+  }
 }
