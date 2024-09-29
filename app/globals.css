@@ -50,6 +50,7 @@ a {
   :root{
     --main-text-color:white;
     --third-text-color:white;
+    background-color: black;
   }
  
 }
