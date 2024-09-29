@@ -26,7 +26,7 @@ export default function Home() {
   const certArr = [
     { id: 1, imgCert: imgCert3 },
     { id: 2, imgCert: imgCert3 },
-    { id: 3, imgCert: imgCert3 },
+    { id: 3, imgCert: imgDoggy },
   ];
 
   return (
