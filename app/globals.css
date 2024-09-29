@@ -32,9 +32,7 @@ body {
   
   
 }
-html, body{
-  background-color: rgb(255, 255, 255) !important;
-}
+
 
 * {
   box-sizing: border-box;
@@ -53,7 +51,5 @@ a {
     --main-text-color:white;
     --third-text-color:white;
   }
-  html, body{
-    background-color: rgb(255, 255, 255) !important;
-  }
+ 
 }
