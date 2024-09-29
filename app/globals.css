@@ -48,6 +48,8 @@ a {
   text-decoration: none;
 }
 
-/* button:hover{
-  background-color: var(--hover-button-color);
-} */
+@media(prefers-color-scheme: dark){
+  :root{
+    --main-text-color:white;
+  }
+}
