@@ -51,5 +51,6 @@ a {
 @media(prefers-color-scheme: dark){
   :root{
     --main-text-color:white;
+    --third-text-color:white;
   }
 }
