@@ -6,7 +6,7 @@
     justify-content: space-between;
     position: fixed;
     z-index: 1001;
-    background-color: red;
+    background-color: var(--transparent-background-color);
     height: 50px;
     
    
@@ -14,6 +14,12 @@
 .header__container_logo{
     width: 50px;
     height: auto;
+}
+.header__container_contacts{
+    color: var(--second-text-color);
+    display: flex;
+    flex-direction: column;
+    
 }
 .header__container_nav {
     position: relative; 

@@ -14,19 +14,20 @@ import BackGroundSquareSvg from "./components/BackGroundSvg/BackGroundSquareSvg/
 import AbilitiesBox from "./components/AbilitiesBox/AbilitiesBox";
 import ScrollX from "./components/ScrollX/ScrollX";
 import AboutCompany from "./components/AboutCompany/AboutCompany";
-import ImageOpener from "./components/ImageOpener/ImageOpener";
-import EnvelopeIcon from "./components/Icons/EnvelopIcon";
-import PhoneIcon from "./components/Icons/PhoneIcon";
-import TelegramIcon from "./components/Icons/TelegramIcon";
-import LocationIcon from "./components/Icons/LocationIcon";
+import Certificates from "./components/Certificates/Certificates";
+import Contacts from "./components/Contacts/Contacts";
 
 export default function Home() {
   const [avatarSrc] = useState(img);
   const DESCRIPTIONS = home_data.description;
   const ADVANTAGES = home_data.advantages;
   const ABILITIES = home_data.abilities;
-
   const [mapLoaded, setMapLoaded] = useState(false);
+  const certArr = [
+    { id: 1, imgCert: imgCert3 },
+    { id: 2, imgCert: imgCert3 },
+    { id: 3, imgCert: imgCert3 },
+  ];
 
   return (
     <main className={styles.home__container}>
@@ -110,23 +111,7 @@ export default function Home() {
           Мои сертификаты
         </h2>
         <BackGroundSquareSvg />
-        <article className={styles.certificates__container}>
-          <div className={styles.certificates__container_element}>
-            <ImageOpener src={imgCert3} />
-          </div>
-          <div className={styles.certificates__container_element}>
-            <ImageOpener src={imgDoggy} />
-          </div>
-          <div className={styles.certificates__container_element}>
-            <ImageOpener src={imgDoggy} />
-          </div>
-          <div className={styles.certificates__container_element}>
-            <ImageOpener src={imgDoggy} />
-          </div>
-          <div className={styles.certificates__container_element}>
-            <ImageOpener src={img} />
-          </div>
-        </article>
+        <Certificates certificatesArr={certArr} />
       </HomeSectionWrapper>
 
       <HomeSectionWrapper>
@@ -137,32 +122,7 @@ export default function Home() {
           Контакты
         </h2>
         <BackGroundSquareSvg rotation={"180"} />
-        <article className={styles.contacts__container}>
-          <p className={styles.contacts__container_item}>
-            <LocationIcon />{" "}
-            <span>
-              Юр. адрес: 190013, г. Санкт-Петербург дом № 7, литер A, оф.4000
-              Вход: г. Санкт-Петербург, канал д.90, БЦ Ной, оф.4
-            </span>
-          </p>
-
-          <p className={styles.contacts__container_item}>
-            <EnvelopeIcon /> <a href="mailto:mail@mail.com">mail@mail.com</a>
-          </p>
-          <p className={styles.contacts__container_item}>
-            <PhoneIcon /> <a href="tel:89217553973">89217553973</a>
-          </p>
-          <p className={styles.contacts__container_item}>
-            <TelegramIcon />
-            <a
-              href="tg://resolve?domain=kulikovarseniy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @Telegram
-            </a>
-          </p>
-        </article>
+        <Contacts />
 
         <article className={styles.contacts__container_map}>
           <div className={styles.container__map_map}>
