@@ -20,7 +20,6 @@
   --main-radius: 10px;
   --adaptive-font-size-small:clamp(10px, 3vw, 18px);/* Минимум 16px, предпочтительно 5vw, максимум 36px */
   --adaptive-font-size-normal:clamp(13px, 1vw, 18px);/* Минимум 16px, предпочтительно 5vw, максимум 36px */
-     
   letter-spacing: 0.02em;
 }
 
