@@ -155,7 +155,7 @@ export default function Home() {
           </p>
           <p className={styles.contacts__container_item}>
             <TelegramIcon />
-            <a href="tg://resolve?domain=@kulikovarseniy">@Telegram</a>
+            <a href="tg://resolve?domain=kulikovarseniy" target="_blank" rel="noopener noreferrer">@Telegram</a>
           </p>
         </article>
 
