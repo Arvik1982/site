@@ -1,7 +1,6 @@
 @font-face {
   font-family: "MainFont";
-  src: url("../../site/app/fonts/roboto-regular.woff2") format("woff2");
-    
+  src: url("/app/fonts/roboto-regular.woff2") format("woff2");    
   font-weight: normal;
   font-style: normal;
 }
