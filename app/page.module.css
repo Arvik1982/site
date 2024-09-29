@@ -6,8 +6,8 @@
   box-sizing: border-box;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-}
+  width: 100%;}
+ 
 .info__text_title {
   z-index: 1000;
   display: flex;
