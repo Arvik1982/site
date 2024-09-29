@@ -1,5 +1,5 @@
 "use client";
-import {  useState } from "react";
+import { useState } from "react";
 import styles from "./page.module.css";
 import img from "./public/standart_img.png";
 import imgDoggy from "./public/1710836151743.jpg";
@@ -19,7 +19,6 @@ import EnvelopeIcon from "./components/Icons/EnvelopIcon";
 import PhoneIcon from "./components/Icons/PhoneIcon";
 import TelegramIcon from "./components/Icons/TelegramIcon";
 import LocationIcon from "./components/Icons/LocationIcon";
-
 
 export default function Home() {
   const [avatarSrc] = useState(img);
@@ -155,27 +154,35 @@ export default function Home() {
           </p>
           <p className={styles.contacts__container_item}>
             <TelegramIcon />
-            <a href="tg://resolve?domain=kulikovarseniy" target="_blank" rel="noopener noreferrer">@Telegram</a>
+            <a
+              href="tg://resolve?domain=kulikovarseniy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @Telegram
+            </a>
           </p>
         </article>
 
         <article className={styles.contacts__container_map}>
           <div className={styles.container__map_map}>
-            {!mapLoaded&&<div style={{ zIndex: "1000", border: "none"}}
-                >Loading...</div>}
-            {(
-              <iframe            
+            {!mapLoaded && (
+              <div style={{ zIndex: "1000", border: "none" }}>Loading...</div>
+            )}
+            {
+              <iframe
                 onLoad={() => setMapLoaded(true)}
-                style={{ zIndex: "1000", border: "none", display: mapLoaded ? 'block' : 'none'  }}
+                style={{
+                  zIndex: "1000",
+                  border: "none",
+                  display: mapLoaded ? "block" : "none",
+                }}
                 src="https://yandex.ru/map-widget/v1/?lang=ru_RU&scroll=true&source=constructor-api&um=constructor%3Ac5a1c37a827694896a0656bef767fdca51f779075988af24becdd32414a7115c"
                 width="100%"
                 height="100%"
                 allowFullScreen={true}
-             
               />
-            )}
-
-          
+            }
           </div>
         </article>
       </HomeSectionWrapper>
