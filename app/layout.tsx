@@ -1,12 +1,8 @@
-
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "./components/Header/Header";
-import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
 import Footer from "./components/Footer/Footer";
-
-
+import StoreProvider from "./storeProvider";
 
 export const metadata: Metadata = {
   title: "Example app",
@@ -20,10 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body >
-        <Header/>
-        {children}
-        <Footer/>
+      <body>
+        <StoreProvider>
+          <Header />
+          {children}
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

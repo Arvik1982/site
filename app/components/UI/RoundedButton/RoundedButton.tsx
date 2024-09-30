@@ -1,10 +1,12 @@
+import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
 import NextIcon from "../../Icons/NextIcon";
 import styles from "./RoundedButton.module.css";
 
+type CustomButtonProps = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 
-export default function RoundedButton(){
+export default function RoundedButton ({...props}:CustomButtonProps){
     return(
-        <button className={styles.button__rounded}>
+        <button {...props} className={styles.button__rounded}>
         <NextIcon/>
       </button>
     )

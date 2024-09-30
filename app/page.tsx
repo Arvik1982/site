@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import img from "./public/standart_img.png";
 import imgDoggy from "./public/1710836151743.jpg";
@@ -18,8 +18,10 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import Map from "./components/Map/Map";
 import AdvantagesContainer from "./components/Advantages/AdvantagesContainer/AdvantagesContainer";
 import AbilitiesContainer from "./components/Abilities/AbilitiesContainer/AbilitiesContainer";
+import { useAppSelector } from "./store/hooks/hooks";
 
 export default function Home() {
+
   const [avatarSrc] = useState(img);
   const DESCRIPTIONS = home_data.description;
   const { scrollY } = useScroll();
@@ -32,6 +34,13 @@ export default function Home() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     latest === 0 ? setIsAtTop(true) : setIsAtTop(false);
   });
+
+  const scrollToStart = useAppSelector((state)=>state.pageStatesSlice.scrollToUp)
+  console.log(scrollToStart)
+
+    
+  
+   
 
   return (
     <main

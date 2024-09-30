@@ -1,27 +1,30 @@
 "use client";
 import styles from "./header.module.css";
-import { useState } from "react";
+import { LegacyRef, ReactNode, useEffect, useRef, useState } from "react";
 import LogoTop from "../Logo/Logo";
 import Mail from "../Contacts/_components/Mail";
 import Telegram from "../Contacts/_components/Telegram";
 import { useMotionValueEvent, useScroll } from 'framer-motion';
+import { useAppDispatch, useAppSelector } from "@/app/store/hooks/hooks";
+import { setScrollToUp} from "@/app/store/slices/pageStatesSlice";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
  
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
+  
 
   useMotionValueEvent(scrollY, "change", (latest) => {    
     latest===0?setIsAtTop(true):setIsAtTop(false)
   })
 
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
   return (
-    <header style={isAtTop?{height:'100px'}:{}} className={`${styles.header__container}`}>      
+    <header  style={isAtTop?{height:'100px'}:{}} className={`${styles.header__container}`}>      
       <div style={isAtTop?{width:'100px'}:{}} className={styles.header__container_logo}>
         <LogoTop />
       </div>
