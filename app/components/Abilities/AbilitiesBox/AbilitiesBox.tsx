@@ -1,5 +1,5 @@
-import BackGroundSvgAbilities from "../BackGroundSvg/BackgroundSvgAbilities/BackgroundSvgAbilities";
-import NextIcon from "../Icons/NextIcon";
+import BackGroundSvgAbilities from "../../BackGroundSvg/BackgroundSvgAbilities/BackgroundSvgAbilities";
+import NextIcon from "../../Icons/NextIcon";
 import styles from "./abilitiesBox.module.css";
 
 type TProps = {

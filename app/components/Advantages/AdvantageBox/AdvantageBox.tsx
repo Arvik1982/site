@@ -1,6 +1,6 @@
-import AtomSvgIcon from "../Icons/AtomSvgIcon";
-import ResearchSvgIcon from "../Icons/ResearchIcon";
-import SequencingSvgIcon from "../Icons/SequencingSvgIcon";
+import AtomSvgIcon from "../../Icons/AtomSvgIcon";
+import ResearchSvgIcon from "../../Icons/ResearchIcon";
+import SequencingSvgIcon from "../../Icons/SequencingSvgIcon";
 import styles from "./advantage.module.css"
 
 type TProps={

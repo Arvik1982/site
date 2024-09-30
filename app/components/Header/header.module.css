@@ -15,33 +15,51 @@
     width: 50px;
     height: auto;
 }
-.header__container_contacts{
-    color: var(--second-text-color);
+.header__container_right{
     display: flex;
-    flex-direction: column;
-    
-}
-.header__container_nav {
-    position: relative; 
-    display: flex;
-    flex-direction: column;
+    gap: 10px;
+    align-items: center;
     justify-content: flex-end;
-    align-items: flex-end; 
+    gap:15px
+}
+.header__container_contacts{
+    color: var(--third-text-color);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    height: 40px;  
+
 }
 
-.burgerButton {
+.header__container_nav {
+    position: relative; 
+    border: var(--main-background-color);
+    border-radius: 4px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.burger__button {
     background: none;
     border: none;
     cursor: pointer;
     display: flex;
     flex-direction: column;
+  
+    
+
 }
 
-.burgerLine {
+.burger__line {
     width: 25px; /* Ширина линии */
-    height: 2px; /* Высота линии */
-    background-color: #000; /* Цвет линии */
-    margin: 1px 0; /* Отступ между линиями */
+    height: 4px; /* Высота линии */
+    background-color:var(--main-button-color); /* Цвет линии */
+    margin: 2px 0; /* Отступ между линиями */
 }
 
 .navList {

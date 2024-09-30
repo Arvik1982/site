@@ -4,10 +4,9 @@ export default function LocationIcon() {
       version="1.0"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
-      style={{zIndex:'100', height:'30px', width:'30px', display:'block'}}
+      style={{ zIndex: "100", height: "30px", width: "30px", display: "block" }}
       viewBox="0 0 64 64"
-      enable-background="new 0 0 64 64"
-      
+      enableBackground="new 0 0 64 64"
       fill="#000000"
     >
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>

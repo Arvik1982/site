@@ -1,16 +1,16 @@
 import TelegramIcon from "../../Icons/TelegramIcon";
 
-export default function Telegram() {
+export default function Telegram({size='n'}:{size?:string}) {
   return (
-    <>
-      <TelegramIcon />
+    <div style={{display:'flex', gap:'10px',alignItems:'center'}}>
+      <TelegramIcon size={size} />
       <a
         href="tg://resolve?domain=kulikovarseniy"
-        // target="_blank"
+        target="_blank"
         rel="noopener noreferrer"
       >
-        @Telegram
+       YourTGName
       </a>
-    </>
+    </div>
   );
 }

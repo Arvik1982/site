@@ -1,0 +1,13 @@
+.button__rounded{
+  background-color: var(--main-button-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  rotate: -90deg;
+}
+.button__rounded:hover{
+  width: 40px;
+  height: 40px;  
+  box-shadow: var( --round-shadow);
+}

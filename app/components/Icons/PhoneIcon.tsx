@@ -1,7 +1,11 @@
-export default function PhoneIcon() {
+export default function PhoneIcon({size='n'}:{size?:string}) {
   return (
     <svg
-    style={{zIndex:'100', height:'30px', width:'30px'}}
+    style={
+      size === "s"
+        ? { zIndex: "100", height: "15px", width: "15px" }
+        : { zIndex: "100", height: "30px", width: "30px" }
+    }
       viewBox="0 0 16.00 16.00"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
