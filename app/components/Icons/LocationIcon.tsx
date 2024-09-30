@@ -4,7 +4,7 @@ export default function LocationIcon() {
       version="1.0"
       id="Layer_1"
       xmlns="http://www.w3.org/2000/svg"
-      style={{zIndex:'100', height:'30px', width:'30px'}}
+      style={{zIndex:'100', height:'30px', width:'30px', display:'block'}}
       viewBox="0 0 64 64"
       enable-background="new 0 0 64 64"
       

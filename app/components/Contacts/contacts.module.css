@@ -6,13 +6,7 @@
     width: 100%;
     padding: 5px;
   }
-  .contacts__container_item{
-    width: 100%;
-    display: flex;
-    gap:10px;
-    align-items: center;
-    font-size:  var(--adaptive-font-size-small);
-  }
+
   
   .contacts__container_item span{
     width: 80%;
