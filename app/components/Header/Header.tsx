@@ -1,12 +1,11 @@
 "use client";
 import styles from "./header.module.css";
-import { LegacyRef, ReactNode, useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import LogoTop from "../Logo/Logo";
 import Mail from "../Contacts/_components/Mail";
 import Telegram from "../Contacts/_components/Telegram";
 import { useMotionValueEvent, useScroll } from 'framer-motion';
-import { useAppDispatch, useAppSelector } from "@/app/store/hooks/hooks";
-import { setScrollToUp} from "@/app/store/slices/pageStatesSlice";
+
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

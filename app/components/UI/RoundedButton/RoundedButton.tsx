@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from "react";
+import { ButtonHTMLAttributes, DetailedHTMLProps} from "react";
 import NextIcon from "../../Icons/NextIcon";
 import styles from "./RoundedButton.module.css";
 
