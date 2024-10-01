@@ -18,7 +18,8 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import Map from "./components/Map/Map";
 import AdvantagesContainer from "./components/Advantages/AdvantagesContainer/AdvantagesContainer";
 import AbilitiesContainer from "./components/Abilities/AbilitiesContainer/AbilitiesContainer";
-import { useAppSelector } from "./store/hooks/hooks";
+import { useAppDispatch, useAppSelector } from "./store/hooks/hooks";
+import { setScrollToUpId } from "./store/slices/pageStatesSlice";
 
 export default function Home() {
 
@@ -26,30 +27,46 @@ export default function Home() {
   const DESCRIPTIONS = home_data.description;
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
-  const certArr = [
+  const certArr = 
+  // home_data.certArr
+  // certArr&&console.log(certArr)
+  [
     { id: 1, imgCert: imgCert3 },
     { id: 2, imgCert: imgCert3 },
     { id: 3, imgCert: imgDoggy },
   ];
+  const dispatch = useAppDispatch()
+  const scrollToStartId = useAppSelector((state)=>state.pageStatesSlice.scrollToUpId)
+  const ref=useRef<HTMLHeadingElement>(null)
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     latest === 0 ? setIsAtTop(true) : setIsAtTop(false);
+    latest !== 0 ? dispatch(setScrollToUpId('')) : '';
   });
 
-  const scrollToStart = useAppSelector((state)=>state.pageStatesSlice.scrollToUp)
-  console.log(scrollToStart)
 
-    
-  
+
+
+  useEffect(() => {
+    if (scrollToStartId === 'focus_start' && ref.current) {
+        ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Плавная прокрутка       
+        // Устанавливаем фокус с небольшой задержкой
+        setTimeout(() => {
+            ref.current?.focus();
+        }, 300);
+    }
+}, [scrollToStartId]);
+
    
 
   return (
-    <main
+    <main 
       style={isAtTop ? { marginTop: "100px" } : {}}
       className={styles.home__container}
     >
       <HomeSectionWrapper>
         <BackGroundSvg />
-        <h1 className={styles.info__text_title}>Центр по важной работе </h1>
+        <h1 ref={ref}  tabIndex={0} className={styles.info__text_title}>Центр по важной работе </h1>
         <RoundedImage img={avatarSrc} />
         <article className={styles.info__text_container}>
           <ul className={styles.text__container_description}>
@@ -102,7 +119,7 @@ export default function Home() {
           Мои сертификаты
         </h2>
         <BackGroundSquareSvg />
-        <Certificates certificatesArr={certArr} />
+        {certArr&&<Certificates certificatesArr={certArr} />}
       </HomeSectionWrapper>
 
       <HomeSectionWrapper>

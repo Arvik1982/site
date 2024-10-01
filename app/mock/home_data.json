@@ -62,6 +62,11 @@
       "ability": "Контроль и диагностика"
     }
  
+  ],
+  "certArr": [
+    { "id": 1, "imgCert": "/cert_3.jpg" },
+    { "id": 2, "imgCert": "/cert_3.jpg" },
+    { "id": 3, "imgCert": "/cert_3.jpg" }
   ]
 
 }

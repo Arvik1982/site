@@ -2,19 +2,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    scrollToUp: false,
+    scrollToUpId: '',
 };
 
 const pageStatesSlice = createSlice({
     name: 'pageStatesSlice',
     initialState,
     reducers: {
-        setScrollToUp: (state, action) => {
-            state.scrollToUp=action.payload;
+        setScrollToUpId: (state, action) => {
+            state.scrollToUpId=action.payload;
+            console.log(state.scrollToUpId)
         },
        
     },
 });
 
-export const { setScrollToUp } = pageStatesSlice.actions;
+export const { setScrollToUpId } = pageStatesSlice.actions;
 export default pageStatesSlice.reducer;

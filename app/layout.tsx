@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import StoreProvider from "./storeProvider";
 
+
 export const metadata: Metadata = {
   title: "Example app",
   description: "next js example app",
@@ -14,6 +15,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+ 
   return (
     <html lang="ru">
       <body>
