@@ -6,6 +6,7 @@ import { LoginFormInputs } from "../types/types";
 import { useErrorStatus } from "../store/hooks/hooks";
 
 export default function Common() {
+  
   const {
     register,
     handleSubmit,
