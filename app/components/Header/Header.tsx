@@ -14,8 +14,9 @@ export default function Header() {
   const [isAtTop, setIsAtTop] = useState(true);
   
 
-  useMotionValueEvent(scrollY, "change", (latest) => {    
-    latest===0?setIsAtTop(true):setIsAtTop(false)
+  useMotionValueEvent(scrollY, "change", (latest) => { 
+    if(latest===0)  {setIsAtTop(true)}
+    if(latest!==0)  {setIsAtTop(false)}    
   })
 
   const toggleMenu = () => {

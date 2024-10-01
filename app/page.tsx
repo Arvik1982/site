@@ -39,14 +39,16 @@ export default function Home() {
   const scrollToStartId = useAppSelector((state)=>state.pageStatesSlice.scrollToUpId)
   const ref=useRef<HTMLHeadingElement>(null)
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    latest === 0 ? setIsAtTop(true) : setIsAtTop(false);
-    latest !== 0 ? dispatch(setScrollToUpId('')) : '';
-  });
 
+  useMotionValueEvent(scrollY, "change", (latest) => { 
+    if(latest===0)  {setIsAtTop(true)}
+    if(latest!==0)  {setIsAtTop(false);dispatch(setScrollToUpId(''))}    
+  })
 
-
-
+  // useMotionValueEvent(scrollY, "change", (latest) => {
+  //   latest === 0 ? setIsAtTop(true) : setIsAtTop(false);
+  //   latest !== 0 ? dispatch(setScrollToUpId('')) : '';
+  // });
   useEffect(() => {
     if (scrollToStartId === 'focus_start' && ref.current) {
         ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Плавная прокрутка       
