@@ -4,28 +4,39 @@ import { useState } from "react";
 import LogoTop from "../Logo/Logo";
 import Mail from "../Contacts/_components/Mail";
 import Telegram from "../Contacts/_components/Telegram";
-import { useMotionValueEvent, useScroll } from 'framer-motion';
-
+import { useMotionValueEvent, useScroll } from "framer-motion";
+import Link from "next/link";
+import RoundedButton from "../UI/RoundedButton/RoundedButton";
+import CloseIcon from "../Icons/CloseIcon";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
- 
+
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
-  
 
-  useMotionValueEvent(scrollY, "change", (latest) => { 
-    if(latest===0)  {setIsAtTop(true)}
-    if(latest!==0)  {setIsAtTop(false)}    
-  })
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest === 0) {
+      setIsAtTop(true);
+    }
+    if (latest !== 0) {
+      setIsAtTop(false);
+    }
+  });
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header  style={isAtTop?{height:'100px'}:{}} className={`${styles.header__container}`}>      
-      <div style={isAtTop?{width:'100px'}:{}} className={styles.header__container_logo}>
+    <header
+      style={isAtTop ? { height: "100px" } : {}}
+      className={`${styles.header__container}`}
+    >
+      <div
+        style={isAtTop ? { width: "100px" } : {}}
+        className={styles.header__container_logo}
+      >
         <LogoTop />
       </div>
       <section className={styles.header__container_right}>
@@ -43,7 +54,12 @@ export default function Header() {
         </nav>
       </section>
       {isMenuOpen && (
-        <ul className={`${styles.navList} ${styles.slideIn}`}>
+        <ul className={`${styles.nav__list} ${styles.slide__in}`}>
+          <li style={{ position: "absolute", top: "0", right: "10px" }}>
+            <RoundedButton onClick={toggleMenu}>
+              <CloseIcon />
+            </RoundedButton>
+          </li>
           <li>
             <a href="/">Главная</a>
           </li>
@@ -52,6 +68,9 @@ export default function Header() {
           </li>
           <li>
             <a href="/contact">Контакты</a>
+          </li>
+          <li>
+            <Link onClick={toggleMenu} href="/common">Войти</Link>
           </li>
         </ul>
       )}

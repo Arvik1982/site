@@ -3,7 +3,7 @@ import "./globals.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import StoreProvider from "./storeProvider";
-
+import DisplayComponent from "./components/DisplayComponent/DisplayComponent";
 
 export const metadata: Metadata = {
   title: "Example app",
@@ -15,15 +15,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
- 
   return (
     <html lang="ru">
+      <head>
+        {/* <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/images/apple-touch-icon.png"
+        /> */}
+      </head>
       <body>
         <StoreProvider>
-          <Header />
+          <DisplayComponent>
+            <Header />
+          </DisplayComponent>
           {children}
-          <Footer />
+          <DisplayComponent>
+            <Footer />
+          </DisplayComponent>
         </StoreProvider>
       </body>
     </html>

@@ -62,7 +62,7 @@
     margin: 2px 0; /* Отступ между линиями */
 }
 
-.navList {
+.nav__list {
     position: fixed;
     padding: 20px;
     width: 90%;
@@ -75,16 +75,16 @@
     box-shadow: var(--main-shadow);
 }
 
-.navList li {
+.nav__list li {
     margin: 10px 0; /* Отступы между элементами списка */
 }
 
-.slideIn {
-    animation: slideIn 0.5s forwards; /* Применяем анимацию */
-    -webkit-animation: slideIn 0.5s forwards;
+.slide__in {
+    animation: slide__in 0.5s forwards; /* Применяем анимацию */
+    -webkit-animation: slide__in 0.5s forwards;
 }
 
-@keyframes slideIn {
+@keyframes slide__in {
     from {
         right: -100%; /* Начальная позиция за пределами экрана */
     }
