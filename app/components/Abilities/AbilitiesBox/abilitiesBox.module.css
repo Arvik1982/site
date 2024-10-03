@@ -48,7 +48,8 @@
   width: 30px;
   height: 30px;
   border: 0;
-  background-color: var(--main-button-color);
-  opacity: 0.3;
+  background-color: var(--accent-background-color);
+  border: 3px solid var(--accent-color);
+  opacity: 0.9;
   border-radius: 100%;
 }

@@ -1,10 +1,15 @@
 .about__info_button {
     font-family: "MainFont";
+    font-weight: bold;
     z-index: 100;
-    color: #ffffff;
-    background-color: var(--main-button-color);
+    color: var( --third-text-color);
+    background-color: var(--accent-color);
+    border: 3px solid var(--accent-background-color);
     padding: 9px;
     box-sizing: border-box;
     border-radius: 18px;
-    border-color: transparent;
+    
+  }
+  .about__info_button:hover{
+    box-shadow: var(--main-shadow);
   }

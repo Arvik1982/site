@@ -1,44 +1,55 @@
 @font-face {
   font-family: "MainFont";
-  src: url("./fonts/OpenSans-Regular.woff2") format("woff2");    
+  src: url("./fonts/OpenSans-Regular.woff2") format("woff2");
+  font-style: normal;
 }
 :root {
-  
   --main-background-color: rgba(240, 250, 255, 1); /* Основной цвет фона */
   --second-background-color: #ffff;
-  --transparent-background-color:rgba(227, 244, 252, 0.8) ;
-  --main-text-color: rgb(75, 164, 208); /* Основной цвет текста */
+  --transparent-background-color: #e3f4fccc;
+  --accent-background-color:#eeedb4;
+  --accent-color:#eeaf68;
+  --main-text-color: #4ba4d0; /* Основной цвет текста */
   --second-text-color: #ffff;
-  --third-text-color:rgba(56, 80, 110, 1);
+  --third-text-color: rgba(56, 80, 110, 1);
   --main-button-color: #504186;
   --second-button-color: #ffff;
   --hover-button-color: #271276;
   --disabled-button-color: #d2cfdb;
-  --main-shadow:2px 2px 5px rgba(0, 0, 0, 0.3);
-  --round-shadow:0 4px 10px rgba(0, 0, 0, 0.3);
+  --main-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  --round-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   --main-radius: 10px;
-  --adaptive-font-size-small:clamp(10px, 3vw, 18px);/* Минимум 16px, предпочтительно 5vw, максимум 36px */
-  --adaptive-font-size-normal:clamp(13px, 1vw, 18px);/* Минимум 16px, предпочтительно 5vw, максимум 36px */
+  --adaptive-font-size-small: clamp(
+    10px,
+    3vw,
+    18px
+  ); /* Минимум 10px, предпочтительно 3vw, максимум 18px */
+  --adaptive-font-size-normal: clamp(
+    13px,
+    1vw,
+    18px
+  ); /* Минимум 13px, предпочтительно 1vw, максимум 18px */
+  --adaptive-font-size-large: clamp(
+    14px,
+    3vw,
+    24px
+  ); /* Минимум 16px, предпочтительно 1vw, максимум 36px */
   letter-spacing: 0.02em;
 }
 
 body {
-  font-family: "MainFont",Arial, Helvetica, sans-serif;
+  font-family: "MainFont", Arial, Helvetica, sans-serif;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  
 }
-
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
- 
 }
 
 a {
@@ -46,11 +57,10 @@ a {
   text-decoration: none;
 }
 
-@media(prefers-color-scheme: dark){
-  :root{
-    --main-text-color:white;
-    --third-text-color:white;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-text-color: white;
+    --third-text-color: white;
     background-color: black;
   }
- 
 }

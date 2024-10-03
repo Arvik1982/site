@@ -8,6 +8,7 @@ import { useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
 import RoundedButton from "../UI/RoundedButton/RoundedButton";
 import CloseIcon from "../Icons/CloseIcon";
+import SequencingSvgIcon from "../Icons/SequencingSvgIcon";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,6 +39,7 @@ export default function Header() {
         className={styles.header__container_logo}
       >
         <LogoTop />
+        
       </div>
       <section className={styles.header__container_right}>
         <div className={styles.header__container_contacts}>
@@ -70,7 +72,7 @@ export default function Header() {
             <a href="/contact">Контакты</a>
           </li>
           <li>
-            <Link onClick={toggleMenu} href="/common">Войти</Link>
+            <Link onClick={toggleMenu} href="/common/login">Войти</Link>
           </li>
         </ul>
       )}

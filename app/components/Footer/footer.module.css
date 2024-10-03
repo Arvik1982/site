@@ -9,3 +9,12 @@
     height: 50px;
       
 }
+.footer__container_button{
+    display: none;
+}
+@media (min-width: 1024px) {
+    .footer__container_button{
+        display: block;     
+    
+    }
+  }
