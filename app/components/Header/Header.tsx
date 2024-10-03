@@ -5,10 +5,7 @@ import LogoTop from "../Logo/Logo";
 import Mail from "../Contacts/_components/Mail";
 import Telegram from "../Contacts/_components/Telegram";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import Link from "next/link";
-import RoundedButton from "../UI/RoundedButton/RoundedButton";
-import CloseIcon from "../Icons/CloseIcon";
-import SequencingSvgIcon from "../Icons/SequencingSvgIcon";
+import BurgerNavUlList from "../Navigation/BurgerNavUlList";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +21,6 @@ export default function Header() {
       setIsAtTop(false);
     }
   });
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -55,27 +51,7 @@ export default function Header() {
           </button>
         </nav>
       </section>
-      {isMenuOpen && (
-        <ul className={`${styles.nav__list} ${styles.slide__in}`}>
-          <li style={{ position: "absolute", top: "0", right: "10px" }}>
-            <RoundedButton onClick={toggleMenu}>
-              <CloseIcon />
-            </RoundedButton>
-          </li>
-          <li>
-            <a href="/">Главная</a>
-          </li>
-          <li>
-            <a href="/about">О нас</a>
-          </li>
-          <li>
-            <a href="/contact">Контакты</a>
-          </li>
-          <li>
-            <Link onClick={toggleMenu} href="/common/login">Войти</Link>
-          </li>
-        </ul>
-      )}
+<BurgerNavUlList isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
     </header>
   );
 }

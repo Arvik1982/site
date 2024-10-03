@@ -29,4 +29,5 @@ const Contacts = forwardRef<HTMLElement, { ref?: LegacyRef<HTMLElement> }>((prop
     </article>
   );
 })
+Contacts.displayName = "Contacts";
 export default Contacts

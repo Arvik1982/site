@@ -37,6 +37,7 @@ export default function Home() {
   );
   const refTop = useRef<HTMLHeadingElement>(null);
   const refContacts = useRef<HTMLHeadingElement>(null);
+  const refAbout = useRef<HTMLHeadingElement>(null);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (latest === 0) {
@@ -54,6 +55,22 @@ export default function Home() {
       // Устанавливаем фокус с небольшой задержкой
       setTimeout(() => {
         refTop.current?.focus();
+      }, 300);
+    }
+
+    if (scrollToStartId === "focus_contacts" && refContacts.current) {
+      refContacts.current.scrollIntoView({ behavior: "smooth", block: "start" }); // Плавная прокрутка
+      // Устанавливаем фокус с небольшой задержкой
+      setTimeout(() => {
+        refContacts.current?.focus();
+      }, 300);
+    }
+
+    if (scrollToStartId === "focus_about" && refAbout.current) {
+      refAbout.current.scrollIntoView({ behavior: "smooth", block: "start" }); // Плавная прокрутка
+      // Устанавливаем фокус с небольшой задержкой
+      setTimeout(() => {
+        refAbout.current?.focus();
       }, 300);
     }
   }, [scrollToStartId]);
@@ -75,7 +92,7 @@ export default function Home() {
           </h1>
         </div>
         <RoundedImage img={avatarSrc} />
-        <article className={styles.info__text_container}>
+        <article  className={styles.info__text_container}>
           <ul className={styles.text__container_description}>
             {DESCRIPTIONS &&
               DESCRIPTIONS.map((description, index) => {
@@ -98,13 +115,15 @@ export default function Home() {
       </HomeSectionWrapper>
       <HomeSectionWrapper>
         {" "}
-        <h2
+        <h2 ref={refAbout} tabIndex={0}
       
           className={styles.info__text}
         >
           О компании:
         </h2>
-        <BackGroundSquareSvg rotation={"180"} />
+        <BackGroundSquareSvg 
+        // rotation={"180"} 
+        />
         <AboutCompany />
       </HomeSectionWrapper>
       <HomeSectionWrapper>
@@ -137,7 +156,9 @@ export default function Home() {
         >
           Контакты:
         </h2>
-        <BackGroundSquareSvg rotation={"180"} />
+        <BackGroundSquareSvg 
+        // rotation={"180"} 
+        />
         <Contacts ref={refContacts} />
         <Map />
       </HomeSectionWrapper>

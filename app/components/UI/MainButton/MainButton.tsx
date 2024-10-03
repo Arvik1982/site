@@ -1,4 +1,3 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 import styles from "./mainButton.module.css";
 
 type TProps={

@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     scrollToUpId: '',
+
+
 };
 
 const pageStatesSlice = createSlice({
@@ -13,6 +15,7 @@ const pageStatesSlice = createSlice({
             state.scrollToUpId=action.payload;
             console.log(state.scrollToUpId)
         },
+      
        
     },
 });

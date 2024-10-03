@@ -1,5 +1,7 @@
-type TProps = { rotation?: string };
-export default function BackGroundSquareSvg({ rotation }: TProps) {
+// type TProps = { rotation?: string };
+export default function BackGroundSquareSvg(
+  // { rotation }: TProps
+) {
   return (
     // <svg
     //   style={{

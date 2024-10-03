@@ -1,18 +1,13 @@
-import { div } from "framer-motion/client";
-import SequencingSvgIcon from "../Icons/SequencingSvgIcon";
-import ResearchSvgIcon from "../Icons/ResearchIcon";
-
 export default function LogoTop() {
   return (
     <div
       style={{
-        display:'flex',
-        alignContent:'center',
+        display: "flex",
+        alignContent: "center",
         width: "96%",
         height: "96%",
         backgroundColor: "#eeedb4",
         borderRadius: "50%",
-        
       }}
     >
       <svg
