@@ -4,15 +4,18 @@ import { useAppPathName } from "@/app/store/hooks/hooks";
 import { ReactNode } from "react";
 
 export default function DisplayComponent({
-  children,
+  children, reference
 }: {
   children: ReactNode;
+  reference:string
 }) {
   const currentPath = useAppPathName();
+  console.log(currentPath, reference)
+
   return (
     <div
       style={
-        currentPath !== "/common"
+        currentPath !== `${reference}`
           ? { width: "100%", height: "100%" }
           : { display: "none" }
       }

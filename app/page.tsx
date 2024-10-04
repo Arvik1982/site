@@ -22,55 +22,77 @@ import { useAppDispatch, useAppSelector } from "./store/hooks/hooks";
 import { setScrollToUpId } from "./store/slices/pageStatesSlice";
 
 export default function Home() {
-
-  const [avatarSrc] = useState(img);
   const DESCRIPTIONS = home_data.description;
+  const [avatarSrc] = useState(img);
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
-  const certArr = 
-  // home_data.certArr
-  // certArr&&console.log(certArr)
-  [
+  const certArr = [
     { id: 1, imgCert: imgCert3 },
     { id: 2, imgCert: imgCert3 },
     { id: 3, imgCert: imgDoggy },
   ];
-  const dispatch = useAppDispatch()
-  const scrollToStartId = useAppSelector((state)=>state.pageStatesSlice.scrollToUpId)
-  const ref=useRef<HTMLHeadingElement>(null)
+  const dispatch = useAppDispatch();
+  const scrollToStartId = useAppSelector(
+    (state) => state.pageStatesSlice.scrollToUpId
+  );
+  const refTop = useRef<HTMLHeadingElement>(null);
+  const refContacts = useRef<HTMLHeadingElement>(null);
+  const refAbout = useRef<HTMLHeadingElement>(null);
 
-
-  useMotionValueEvent(scrollY, "change", (latest) => { 
-    if(latest===0)  {setIsAtTop(true)}
-    if(latest!==0)  {setIsAtTop(false);dispatch(setScrollToUpId(''))}    
-  })
-
-  // useMotionValueEvent(scrollY, "change", (latest) => {
-  //   latest === 0 ? setIsAtTop(true) : setIsAtTop(false);
-  //   latest !== 0 ? dispatch(setScrollToUpId('')) : '';
-  // });
-  useEffect(() => {
-    if (scrollToStartId === 'focus_start' && ref.current) {
-        ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Плавная прокрутка       
-        // Устанавливаем фокус с небольшой задержкой
-        setTimeout(() => {
-            ref.current?.focus();
-        }, 300);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (latest === 0) {
+      setIsAtTop(true);
     }
-}, [scrollToStartId]);
+    if (latest !== 0) {
+      setIsAtTop(false);
+      dispatch(setScrollToUpId(""));
+    }
+  });
 
-   
+  useEffect(() => {
+    if (scrollToStartId === "focus_start" && refTop.current) {
+      refTop.current.scrollIntoView({ behavior: "smooth", block: "start" }); // Плавная прокрутка
+      // Устанавливаем фокус с небольшой задержкой
+      setTimeout(() => {
+        refTop.current?.focus();
+      }, 300);
+    }
+
+    if (scrollToStartId === "focus_contacts" && refContacts.current) {
+      refContacts.current.scrollIntoView({ behavior: "smooth", block: "start" }); // Плавная прокрутка
+      // Устанавливаем фокус с небольшой задержкой
+      setTimeout(() => {
+        refContacts.current?.focus();
+      }, 300);
+    }
+
+    if (scrollToStartId === "focus_about" && refAbout.current) {
+      refAbout.current.scrollIntoView({ behavior: "smooth", block: "start" }); // Плавная прокрутка
+      // Устанавливаем фокус с небольшой задержкой
+      setTimeout(() => {
+        refAbout.current?.focus();
+      }, 300);
+    }
+  }, [scrollToStartId]);
+
+  const handleContactsFocus = (): void => {
+    refContacts.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
-    <main 
+    <main
       style={isAtTop ? { marginTop: "100px" } : {}}
       className={styles.home__container}
     >
       <HomeSectionWrapper>
         <BackGroundSvg />
-        <h1 ref={ref}  tabIndex={0} className={styles.info__text_title}>Центр по важной работе </h1>
+        <div className={styles.info__title_container}>
+          <h1 ref={refTop} tabIndex={0} className={styles.info__text_title}>
+            Название организации{" "}
+          </h1>
+        </div>
         <RoundedImage img={avatarSrc} />
-        <article className={styles.info__text_container}>
+        <article  className={styles.info__text_container}>
           <ul className={styles.text__container_description}>
             {DESCRIPTIONS &&
               DESCRIPTIONS.map((description, index) => {
@@ -83,30 +105,33 @@ export default function Home() {
               })}
           </ul>
         </article>
-        <MainButton text={"Связаться с нами"} />
+
+        <MainButton onClick={handleContactsFocus} text={"Связаться"} />
       </HomeSectionWrapper>
       <HomeSectionWrapper>
         <BackGroundSvg rotation="180" color="#504186" />
-        <h2 className={styles.info__text}>Наши преимущества</h2>
+        <h2 className={styles.info__text_advantages}>Преимущества:</h2>
         <AdvantagesContainer />
       </HomeSectionWrapper>
       <HomeSectionWrapper>
         {" "}
-        <h2
-          style={{ color: "var(--main-text-color)" }}
+        <h2 ref={refAbout} tabIndex={0}
+      
           className={styles.info__text}
         >
           О компании:
         </h2>
-        <BackGroundSquareSvg rotation={"180"} />
+        <BackGroundSquareSvg 
+        // rotation={"180"} 
+        />
         <AboutCompany />
       </HomeSectionWrapper>
       <HomeSectionWrapper>
         <h2
-          style={{ color: "var(--main-text-color)" }}
+         
           className={styles.info__text}
         >
-          Наши возможности
+          Возможности:
         </h2>
         <BackGroundSquareSvg />
         <ScrollX>
@@ -115,24 +140,26 @@ export default function Home() {
       </HomeSectionWrapper>
       <HomeSectionWrapper>
         <h2
-          style={{ color: "var(--main-text-color)" }}
+         
           className={styles.info__text}
         >
-          Мои сертификаты
+          Cертификаты:
         </h2>
         <BackGroundSquareSvg />
-        {certArr&&<Certificates certificatesArr={certArr} />}
+        {certArr && <Certificates certificatesArr={certArr} />}
       </HomeSectionWrapper>
 
       <HomeSectionWrapper>
         <h2
-          style={{ color: "var(--main-text-color)" }}
+         
           className={styles.info__text}
         >
-          Контакты
+          Контакты:
         </h2>
-        <BackGroundSquareSvg rotation={"180"} />
-        <Contacts />
+        <BackGroundSquareSvg 
+        // rotation={"180"} 
+        />
+        <Contacts ref={refContacts} />
         <Map />
       </HomeSectionWrapper>
     </main>

@@ -1,0 +1,29 @@
+.nav__list {
+    position: fixed;
+    padding: 20px;
+    width: 90%;
+    height: 100%;    
+    top: 0;   
+    z-index: 1001;
+    list-style-type: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: var(--main-shadow);
+
+    transform: translateX(110%);   
+    transition: transform 0.3s ease;
+ 
+}
+.nav__list.show { 
+    transform: translateX(10%);
+   
+ }
+.nav__list li {
+    margin: 10px 0; /* Отступы между элементами списка */
+}
+.nav__list_second{
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+
+

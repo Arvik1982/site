@@ -26,11 +26,11 @@ export default function RootLayout({
       </head>
       <body>
         <StoreProvider>
-          <DisplayComponent>
+          <DisplayComponent reference={'/common/login'}>
             <Header />
           </DisplayComponent>
           {children}
-          <DisplayComponent>
+          <DisplayComponent reference={'/common/login'}>
             <Footer />
           </DisplayComponent>
         </StoreProvider>

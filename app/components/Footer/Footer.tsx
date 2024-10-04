@@ -18,13 +18,16 @@ export default function Footer() {
           bottom: "5px",
           right: "10px",
         }}
-      >
+      ><div className={`${styles.footer__container_button}`}>
         <RoundedButton
           onClick={() => {
             dispatch(setScrollToUpId("focus_start"));
           }}
-          
-        > <NextIcon/></RoundedButton>
+        >
+          {" "}
+          <NextIcon />
+        </RoundedButton>
+        </div>
       </div>
     </footer>
   );
