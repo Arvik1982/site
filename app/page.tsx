@@ -88,7 +88,7 @@ export default function Home() {
         <BackGroundSvg />
         <div className={styles.info__title_container}>
           <h1 ref={refTop} tabIndex={0} className={styles.info__text_title}>
-            Центр по важной работе{" "}
+            Название организации{" "}
           </h1>
         </div>
         <RoundedImage img={avatarSrc} />

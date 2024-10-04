@@ -2,29 +2,28 @@
     position: fixed;
     padding: 20px;
     width: 90%;
-    height: 100%;
-    top: 0;
-    right: 0;
+    height: 100%;    
+    top: 0;   
     z-index: 1001;
-    list-style-type: none; /* Убираем маркеры списка */
+    list-style-type: none;
     background-color: rgb(255, 255, 255);
     box-shadow: var(--main-shadow);
-}
 
+    transform: translateX(110%);   
+    transition: transform 0.3s ease;
+ 
+}
+.nav__list.show { 
+    transform: translateX(10%);
+   
+ }
 .nav__list li {
     margin: 10px 0; /* Отступы между элементами списка */
 }
-
-.slide__in {
-    animation: slide__in 0.5s forwards; /* Применяем анимацию */
-    -webkit-animation: slide__in 0.5s forwards;
+.nav__list_second{
+    list-style-type: none;
+    margin-left: 20px;
 }
 
-@keyframes slide__in {
-    from {
-        right: -100%; /* Начальная позиция за пределами экрана */
-    }
-    to {
-        right: 0; /* Конечная позиция */
-    }
-}
+
+
