@@ -18,11 +18,12 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
-        {/* <link
-          rel="apple-touch-icon"
+      <link
+          rel="preload"
+          as="image"
+          href='./public/gig_2.gif'
           sizes="180x180"
-          href="/images/apple-touch-icon.png"
-        /> */}
+        />
       </head>
       <body>
         <StoreProvider>

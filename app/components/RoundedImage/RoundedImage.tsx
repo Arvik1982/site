@@ -11,9 +11,11 @@ type TProps = {
 export default function RoundedImage({ img }: TProps) {
   return (
     <div className={styles.container__picture}>
-      <picture className={styles.about__info_avatar}>
+      <picture 
+      
+      className={styles.about__info_avatar}>
         {img && (
-          <Image className={styles.info__avatar_img} src={img} alt="avatar" />
+          <Image quality={80} className={styles.info__avatar_img} src={img} alt="avatar" />
         )}
         {!img && <span></span>}
       </picture>
