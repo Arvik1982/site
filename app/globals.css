@@ -7,8 +7,9 @@
   --main-background-color: rgba(240, 250, 255, 1); /* Основной цвет фона */
   --second-background-color: #ffff;
   --transparent-background-color: #e3f4fccc;
-  --accent-background-color:#eeedb4;
-  --accent-color:#eeaf68;
+  --transparent-background-color-2: #504186c7;
+  --accent-background-color: rgba(240, 250, 255, 1);
+  --accent-color: #eeaf68;
   --main-text-color: #4ba4d0; /* Основной цвет текста */
   --second-text-color: #ffff;
   --third-text-color: rgba(56, 80, 110, 1);
@@ -44,6 +45,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--main-background-color);
 }
 
 * {
@@ -59,8 +61,6 @@ a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-text-color: white;
-    --third-text-color: white;
-    background-color: black;
+    background-color: var(--main-background-color);
   }
 }

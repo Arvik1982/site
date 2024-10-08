@@ -70,7 +70,7 @@ export default function BurgerNavUlList({
       </ul>
 
       <li>
-        <Link onClick={toggleMenu} href="/common/login">
+        <Link onClick={toggleMenu} href="/login">
           Войти
         </Link>
       </li>

@@ -1,4 +1,3 @@
-import BackGroundSvgAbilities from "../../BackGroundSvg/BackgroundSvgAbilities/BackgroundSvgAbilities";
 import NextIcon from "../../Icons/NextIcon";
 import styles from "./abilitiesBox.module.css";
 
@@ -10,7 +9,7 @@ type TProps = {
 export default function AbilitiesBox({ index, ability }: TProps) {
   return (
     <article key={index} className={styles.illustration__box}>
-      <BackGroundSvgAbilities/>
+     
       <p className={styles.illustration__box_text}>
         <span>{ability}</span>
         </p>

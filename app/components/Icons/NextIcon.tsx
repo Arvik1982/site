@@ -1,7 +1,7 @@
 export default function NextIcon() {
   return (
 <svg
-    fill="#4ba4d0"
+    fill="white"
     viewBox="0 0 32 32"
     xmlns="http://www.w3.org/2000/svg"
     stroke="#4ba4d0"
