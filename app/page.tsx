@@ -85,33 +85,32 @@ export default function Home() {
     <main
       style={isAtTop ? { marginTop: "100px" } : {}}
       className={styles.home__container}
-    ><div className={styles.info__title_background}>
-      <HomeSectionWrapper>
-        
-        <BackGroundSvg />
-        <div className={styles.info__title_container}>
-          <h1 ref={refTop} tabIndex={0} className={styles.info__text_title}>
-            Название организации{" "}
-          </h1>
-        </div>
-        <RoundedImage />
-        <article className={styles.info__text_container}>
-          <ul className={styles.text__container_description}>
-            {DESCRIPTIONS &&
-              DESCRIPTIONS.map((description, index) => {
-                return (
-                  <li key={index}>
-                    {" "}
-                    <span>{description.description}</span>
-                  </li>
-                );
-              })}
-          </ul>
-        </article>
+    >
+      <div className={styles.info__title_background}>
+        <HomeSectionWrapper>
+          <BackGroundSvg color="#504186" />
+          <div className={styles.info__title_container}>
+            <h1 ref={refTop} tabIndex={0} className={styles.info__text_title}>
+              Название организации{" "}
+            </h1>
+          </div>
+          <RoundedImage />
+          <article className={styles.info__text_container}>
+            <ul className={styles.text__container_description}>
+              {DESCRIPTIONS &&
+                DESCRIPTIONS.map((description, index) => {
+                  return (
+                    <li key={index}>
+                      {" "}
+                      <span>{description.description}</span>
+                    </li>
+                  );
+                })}
+            </ul>
+          </article>
 
-        <MainButton onClick={handleContactsFocus} text={"Связаться"} />
-        
-      </HomeSectionWrapper>
+          <MainButton onClick={handleContactsFocus} text={"Связаться"} />
+        </HomeSectionWrapper>
       </div>
       <HomeSectionWrapper>
         <BackGroundSvg rotation="180" color="#504186" />

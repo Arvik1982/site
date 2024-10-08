@@ -49,6 +49,7 @@
  
 }
 .info__text {
+ 
   display: flex;
   z-index: 1000;
   align-items: center;
@@ -71,6 +72,7 @@
   box-sizing: border-box;
 }
 .text__container_description {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 5px;
