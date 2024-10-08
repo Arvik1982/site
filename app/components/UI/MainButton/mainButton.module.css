@@ -3,9 +3,9 @@
     font-weight: bold;
     z-index: 100;
     color: var( --third-text-color);
-    background-color: var(--accent-color);
-    border: 3px solid var(--accent-background-color);
+    background-color: var(--accent-background-color);
     padding: 9px;
+    border: none;
     box-sizing: border-box;
     border-radius: 18px;
     
