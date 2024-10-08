@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
-import img from "./public/e50b1991adcffee6b08b5f013b4b4400.gif";
+
 import imgDoggy from "./public/1710836151743.jpg";
 import imgCert3 from "./public/cert_3.jpg";
 import home_data from "./mock/home_data.json";
@@ -23,7 +23,6 @@ import { setScrollToUpId } from "./store/slices/pageStatesSlice";
 
 export default function Home() {
   const DESCRIPTIONS = home_data.description;
-  const [avatarSrc] = useState(img);
   const { scrollY } = useScroll();
   const [isAtTop, setIsAtTop] = useState(true);
   const certArr = [
