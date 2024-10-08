@@ -24,6 +24,12 @@ export default function RootLayout({
           href='./public/gig_2.gif'
           sizes="180x180"
         />
+             <link
+          rel="preload"
+          as="image"
+          href='./public/dev_img_2.jpg'
+          sizes="180x180"
+        />
       </head>
       <body>
         <StoreProvider>
