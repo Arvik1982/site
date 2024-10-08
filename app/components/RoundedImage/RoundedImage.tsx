@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import styles from "./roundedImage.module.css";
 
 type TProps={
-   img: StaticImageData
+   img?: StaticImageData
 }
 
 export default function RoundedImage({img}:TProps){
@@ -18,7 +18,7 @@ export default function RoundedImage({img}:TProps){
               alt="avatar"
             />
           )}
-          {!img && <span> no img </span>}
+          {!img && <span></span>}
         </picture>
       </div>
     )

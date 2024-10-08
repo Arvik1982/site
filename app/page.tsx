@@ -91,7 +91,7 @@ export default function Home() {
             Название организации{" "}
           </h1>
         </div>
-        <RoundedImage img={avatarSrc} />
+        <RoundedImage  />
         <article  className={styles.info__text_container}>
           <ul className={styles.text__container_description}>
             {DESCRIPTIONS &&
