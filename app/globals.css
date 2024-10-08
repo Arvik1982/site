@@ -4,7 +4,7 @@
   font-style: normal;
 }
 :root {
-  --main-background-color: rgba(240, 250, 255, 1); /* Основной цвет фона */
+  --main-background-color: #f0faff; /* Основной цвет фона */
   --second-background-color: #ffff;
   --transparent-background-color: #e3f4fccc;
   --transparent-background-color-2: #504186c7;
@@ -12,7 +12,7 @@
   --accent-color: #eeaf68;
   --main-text-color: #4ba4d0; /* Основной цвет текста */
   --second-text-color: #ffff;
-  --third-text-color: rgba(56, 80, 110, 1);
+  --third-text-color: #38506e;
   --main-button-color: #504186;
   --second-button-color: #ffff;
   --hover-button-color: #271276;
