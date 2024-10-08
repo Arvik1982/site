@@ -2,7 +2,7 @@
     font-family: "MainFont";
     font-weight: bold;
     z-index: 100;
-    color: var( --third-text-color);
+    color: var( --main-button-color);
     background-color: var(--accent-background-color);
     padding: 9px;
     border: none;

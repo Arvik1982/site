@@ -85,8 +85,9 @@ export default function Home() {
     <main
       style={isAtTop ? { marginTop: "100px" } : {}}
       className={styles.home__container}
-    >
+    ><div className={styles.info__title_background}>
       <HomeSectionWrapper>
+        
         <BackGroundSvg />
         <div className={styles.info__title_container}>
           <h1 ref={refTop} tabIndex={0} className={styles.info__text_title}>
@@ -109,7 +110,9 @@ export default function Home() {
         </article>
 
         <MainButton onClick={handleContactsFocus} text={"Связаться"} />
+        
       </HomeSectionWrapper>
+      </div>
       <HomeSectionWrapper>
         <BackGroundSvg rotation="180" color="#504186" />
         <h2 className={styles.info__text_advantages}>Преимущества:</h2>
