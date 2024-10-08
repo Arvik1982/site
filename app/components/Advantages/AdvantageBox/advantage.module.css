@@ -13,7 +13,7 @@
   color: var(--second-text-color);
   box-shadow: var(--round-shadow);
   opacity: 0.9;
-  background-image: url('@/../../../../public/dev_img_4.jpg');
+  background-image: url('@/../../../../public/standart_img.png');
   
   background-position: center;
   background-repeat: no-repeat;
