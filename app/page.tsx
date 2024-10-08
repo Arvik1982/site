@@ -59,7 +59,10 @@ export default function Home() {
     }
 
     if (scrollToStartId === "focus_contacts" && refContacts.current) {
-      refContacts.current.scrollIntoView({ behavior: "smooth", block: "start" }); // Плавная прокрутка
+      refContacts.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      }); // Плавная прокрутка
       // Устанавливаем фокус с небольшой задержкой
       setTimeout(() => {
         refContacts.current?.focus();
@@ -91,8 +94,8 @@ export default function Home() {
             Название организации{" "}
           </h1>
         </div>
-        <RoundedImage  />
-        <article  className={styles.info__text_container}>
+        <RoundedImage />
+        <article className={styles.info__text_container}>
           <ul className={styles.text__container_description}>
             {DESCRIPTIONS &&
               DESCRIPTIONS.map((description, index) => {
@@ -115,49 +118,31 @@ export default function Home() {
       </HomeSectionWrapper>
       <HomeSectionWrapper>
         {" "}
-        <h2 ref={refAbout} tabIndex={0}
-      
-          className={styles.info__text}
-        >
+        <h2 ref={refAbout} tabIndex={0} className={styles.info__text}>
           О компании:
         </h2>
-        <BackGroundSquareSvg 
-        // rotation={"180"} 
+        <BackGroundSquareSvg
+        // rotation={"180"}
         />
         <AboutCompany />
       </HomeSectionWrapper>
       <HomeSectionWrapper>
-        <h2
-         
-          className={styles.info__text}
-        >
-          Возможности:
-        </h2>
+        <h2 className={styles.info__text}>Возможности:</h2>
         <BackGroundSquareSvg />
         <ScrollX>
           <AbilitiesContainer />
         </ScrollX>
       </HomeSectionWrapper>
       <HomeSectionWrapper>
-        <h2
-         
-          className={styles.info__text}
-        >
-          Cертификаты:
-        </h2>
+        <h2 className={styles.info__text}>Cертификаты:</h2>
         <BackGroundSquareSvg />
         {certArr && <Certificates certificatesArr={certArr} />}
       </HomeSectionWrapper>
 
       <HomeSectionWrapper>
-        <h2
-         
-          className={styles.info__text}
-        >
-          Контакты:
-        </h2>
-        <BackGroundSquareSvg 
-        // rotation={"180"} 
+        <h2 className={styles.info__text}>Контакты:</h2>
+        <BackGroundSquareSvg
+        // rotation={"180"}
         />
         <Contacts ref={refContacts} />
         <Map />
