@@ -22,7 +22,7 @@
   align-items: center;
   font-weight: bold;
   color: var(--main-button-color);
-  text-shadow: 2px 2px 3px var(--main-text-color);
+  text-shadow: 2px 2px 3px var(--main-button-color);
 }
 
 .info__text_advantages {

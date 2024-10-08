@@ -10,12 +10,11 @@
   border-radius: var(--main-radius);
   padding: 5px;
   flex-direction: column;
- background-image: url('@/../../../../public/dev_img.jpg');
-  
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
- align-items: center;
+  background-image: url("@/../../../../public/dev_img.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-items: center;
   color: var(--second-text-color);
   box-shadow: var(--round-shadow);
   margin-right: 10px; /* Отступ между элементами */
@@ -47,15 +46,14 @@
   padding: 5px;
   text-align: center;
   margin-top: 30px;
-  font-size: var(--adaptive-font-size-normal); 
-  display: flex; 
+  font-size: var(--adaptive-font-size-normal);
+  display: flex;
   flex-direction: column;
   align-content: center;
   flex-wrap: wrap;
   justify-content: center;
-  
 }
-.illustration__box_button{
+.illustration__box_button {
   width: 30px;
   height: 30px;
   border: 0;

@@ -36,9 +36,9 @@
 }
 
 .illustration__box_text {
+  justify-content: center;
   padding: 5px;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
+font-weight:bolder ;
   border-radius: 8px;
   padding: 5px;
   text-align: center;
@@ -53,8 +53,11 @@
 }
 
 .illustration__box_text span {
+  overflow-wrap: break-word; /* Позволяет переносить длинные слова */
+  word-wrap: break-word; /* Устаревшее свойство для совместимости */
+  word-break: break-all; /* Разбивает слова на новые строки при необходимости */
   display: flex;
-  font-size: var(--adaptive-font-size-small);
+  font-size: var(--adaptive-font-size-normal);
   width: 100%;
   flex-direction: column;
   align-content: center;
