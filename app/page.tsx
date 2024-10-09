@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
-
+import topBGround from "./public/dev_img_2.jpg";
 import imgDoggy from "./public/1710836151743.jpg";
 import imgCert3 from "./public/cert_3.jpg";
 import home_data from "./mock/home_data.json";
@@ -20,6 +20,7 @@ import AdvantagesContainer from "./components/Advantages/AdvantagesContainer/Adv
 import AbilitiesContainer from "./components/Abilities/AbilitiesContainer/AbilitiesContainer";
 import { useAppDispatch, useAppSelector } from "./store/hooks/hooks";
 import { setScrollToUpId } from "./store/slices/pageStatesSlice";
+import Image from "next/image";
 
 export default function Home() {
   const DESCRIPTIONS = home_data.description;
@@ -86,32 +87,39 @@ export default function Home() {
       style={isAtTop ? { marginTop: "100px" } : {}}
       className={styles.home__container}
     >
-      <div className={styles.info__title_background}>
-        <HomeSectionWrapper>
-          <BackGroundSvg color="#504186" />
-          <div className={styles.info__title_container}>
-            <h1 ref={refTop} tabIndex={0} className={styles.info__text_title}>
-              Название организации{" "}
-            </h1>
-          </div>
-          <RoundedImage />
-          <article className={styles.info__text_container}>
-            <ul className={styles.text__container_description}>
-              {DESCRIPTIONS &&
-                DESCRIPTIONS.map((description, index) => {
-                  return (
-                    <li key={index}>
-                      {" "}
-                      <span>{description.description}</span>
-                    </li>
-                  );
-                })}
-            </ul>
-          </article>
+      <HomeSectionWrapper>
+        <picture  className={styles.title__background_pic}>
+          <Image
+          loading="lazy"
+            className={styles.background__pic_img}
+            src={topBGround}
+            alt=""
+          />
+        </picture>
+        <BackGroundSvg color="#504186" />
+        <div className={styles.info__title_container}>
+          <h1 ref={refTop} tabIndex={0} className={styles.info__text_title}>
+            Название организации{" "}
+          </h1>
+        </div>
+        <RoundedImage />
+        <article className={styles.info__text_container}>
+          <ul className={styles.text__container_description}>
+            {DESCRIPTIONS &&
+              DESCRIPTIONS.map((description, index) => {
+                return (
+                  <li key={index}>
+                    {" "}
+                    <span>{description.description}</span>
+                  </li>
+                );
+              })}
+          </ul>
+        </article>
 
-          <MainButton onClick={handleContactsFocus} text={"Связаться"} />
-        </HomeSectionWrapper>
-      </div>
+        <MainButton onClick={handleContactsFocus} text={"Связаться"} />
+      </HomeSectionWrapper>
+
       <HomeSectionWrapper>
         <BackGroundSvg rotation="180" color="#504186" />
         <h2 className={styles.info__text_advantages}>Преимущества:</h2>
