@@ -13,8 +13,8 @@
   color: var(--second-text-color);
   box-shadow: var(--round-shadow);
   opacity: 0.9;
-  background-image: url('@/../../../../public/standart_img.png');
-  
+  background-image: url("@/../../../../public/standart_img.png");
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,7 +24,6 @@
   z-index: 100;
   right: -5px;
   top: -10px;
-
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -38,7 +37,7 @@
 .illustration__box_text {
   justify-content: center;
   padding: 5px;
-font-weight:bolder ;
+  font-weight: bolder;
   border-radius: 8px;
   padding: 5px;
   text-align: center;
@@ -48,16 +47,18 @@ font-weight:bolder ;
   font-size: 16px;
   display: flex;
   flex-direction: column;
-  align-content: center; 
+  align-content: center;
   background-color: var(--transparent-background-color-2);
 }
 
 .illustration__box_text span {
   overflow-wrap: break-word; /* Позволяет переносить длинные слова */
   word-wrap: break-word; /* Устаревшее свойство для совместимости */
-  word-break: break-all; /* Разбивает слова на новые строки при необходимости */
+  word-break: normal;
+  hyphens: auto;
   display: flex;
-  font-size: var(--adaptive-font-size-normal);
+  font-weight: bolder;
+  font-size: var(--adaptive-font-size-small);
   width: 100%;
   flex-direction: column;
   align-content: center;

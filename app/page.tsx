@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./page.module.css";
 import topBGround from "./public/dev_img_2.jpg";
 import imgDoggy from "./public/1710836151743.jpg";
@@ -14,24 +14,23 @@ import ScrollX from "./components/ScrollX/ScrollX";
 import AboutCompany from "./components/AboutCompany/AboutCompany";
 import Certificates from "./components/Certificates/Certificates";
 import Contacts from "./components/Contacts/Contacts";
-import { useMotionValueEvent, useScroll } from "framer-motion";
+
 import Map from "./components/Map/Map";
 import AdvantagesContainer from "./components/Advantages/AdvantagesContainer/AdvantagesContainer";
 import AbilitiesContainer from "./components/Abilities/AbilitiesContainer/AbilitiesContainer";
-import { useAppDispatch, useAppSelector } from "./store/hooks/hooks";
-import { setScrollToUpId } from "./store/slices/pageStatesSlice";
+import { useAppSelector } from "./store/hooks/hooks";
 import Image from "next/image";
 
 export default function Home() {
   const DESCRIPTIONS = home_data.description;
-  const { scrollY } = useScroll();
-  const [isAtTop, setIsAtTop] = useState(true);
+  
+  
   const certArr = [
     { id: 1, imgCert: imgCert3 },
     { id: 2, imgCert: imgCert3 },
     { id: 3, imgCert: imgDoggy },
   ];
-  const dispatch = useAppDispatch();
+  
   const scrollToStartId = useAppSelector(
     (state) => state.pageStatesSlice.scrollToUpId
   );
@@ -39,15 +38,7 @@ export default function Home() {
   const refContacts = useRef<HTMLHeadingElement>(null);
   const refAbout = useRef<HTMLHeadingElement>(null);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest === 0) {
-      setIsAtTop(true);
-    }
-    if (latest !== 0) {
-      setIsAtTop(false);
-      dispatch(setScrollToUpId(""));
-    }
-  });
+
 
   useEffect(() => {
     if (scrollToStartId === "focus_start" && refTop.current) {
@@ -83,23 +74,20 @@ export default function Home() {
   };
 
   return (
-    <main
-      style={isAtTop ? { marginTop: "100px" } : {}}
-      className={styles.home__container}
-    >
-      <HomeSectionWrapper>
+<>
+      <section className={styles.top__section_wrapper}>
         <picture  className={styles.title__background_pic}>
           <Image
-          loading="lazy"
+            loading="lazy"
             className={styles.background__pic_img}
             src={topBGround}
-            alt=""
+            alt="background"
           />
         </picture>
         <BackGroundSvg color="#504186" />
         <div className={styles.info__title_container}>
           <h1 ref={refTop} tabIndex={0} className={styles.info__text_title}>
-            Название организации{" "}
+            Ваш веб-разработчик{" "}
           </h1>
         </div>
         <RoundedImage />
@@ -116,19 +104,18 @@ export default function Home() {
               })}
           </ul>
         </article>
-
         <MainButton onClick={handleContactsFocus} text={"Связаться"} />
-      </HomeSectionWrapper>
+      </section>
 
       <HomeSectionWrapper>
         <BackGroundSvg rotation="180" color="#504186" />
-        <h2 className={styles.info__text_advantages}>Преимущества:</h2>
+        <h2 className={styles.info__text_advantages}>Мои преимущества:</h2>
         <AdvantagesContainer />
       </HomeSectionWrapper>
       <HomeSectionWrapper>
         {" "}
         <h2 ref={refAbout} tabIndex={0} className={styles.info__text}>
-          О компании:
+          Об авторе:
         </h2>
         <BackGroundSquareSvg
         // rotation={"180"}
@@ -136,14 +123,14 @@ export default function Home() {
         <AboutCompany />
       </HomeSectionWrapper>
       <HomeSectionWrapper>
-        <h2 className={styles.info__text}>Возможности:</h2>
+        <h2 className={styles.info__text}>Портфолио:</h2>
         <BackGroundSquareSvg />
         <ScrollX>
           <AbilitiesContainer />
         </ScrollX>
       </HomeSectionWrapper>
       <HomeSectionWrapper>
-        <h2 className={styles.info__text}>Cертификаты:</h2>
+        <h2 className={styles.info__text}>Диплом:</h2>
         <BackGroundSquareSvg />
         {certArr && <Certificates certificatesArr={certArr} />}
       </HomeSectionWrapper>
@@ -156,6 +143,6 @@ export default function Home() {
         <Contacts ref={refContacts} />
         <Map />
       </HomeSectionWrapper>
-    </main>
+    </>
   );
 }

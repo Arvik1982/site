@@ -4,8 +4,9 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import StoreProvider from "./storeProvider";
 import DisplayComponent from "./components/DisplayComponent/DisplayComponent";
-import topBGround from './public/dev_img_2.jpg'
-import itemBGround from './public/dev_img.jpg'
+import topBGround from "./public/dev_img_2.jpg";
+import itemBGround from "./public/dev_img.jpg";
+import ContentContainer from "./components/ContentContainer/ContentContainer";
 
 export const metadata: Metadata = {
   title: "Example app",
@@ -20,27 +21,18 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
-      <link
-          rel="preload"
-          as="image"
-          href={topBGround.src}
-         
-        />
-          <link
-          rel="preload"
-          as="image"
-          href={itemBGround.src}
-         sizes="300x300"
-        />
-   
+        <link rel="preload" as="image" href={topBGround.src} />
+        <link rel="preload" as="image" href={itemBGround.src} sizes="300x300" />
       </head>
       <body>
         <StoreProvider>
-          <DisplayComponent reference={'/common/login'}>
+          <DisplayComponent reference={"/common/login"}>
             <Header />
           </DisplayComponent>
+          <ContentContainer>
           {children}
-          <DisplayComponent reference={'/common/login'}>
+          </ContentContainer>
+          <DisplayComponent reference={"/common/login"}>
             <Footer />
           </DisplayComponent>
         </StoreProvider>

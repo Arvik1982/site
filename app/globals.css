@@ -20,6 +20,7 @@
   --disabled-button-color: #d2cfdb;
   --main-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   --round-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  --round-shadow-white: 0 4px 10px rgba(253, 253, 253, 0.5);
   --main-radius: 10px;
   --adaptive-font-size-small: clamp(
     10px,
