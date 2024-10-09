@@ -11,6 +11,7 @@ export default function AbilitiesContainer(){
                   key={index}
                   index={index}
                   ability={ability.ability}
+                  ability_en={ability.ability_en}
                 />
               );
             })}</>

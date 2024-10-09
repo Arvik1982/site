@@ -41,7 +41,7 @@
   height: 50px;
   border-radius: 50%;
   /* background-color: var(--transparent-background-color); */
-  box-shadow: 7px 5px 6px rgba(59, 121, 138, 0.9);
+  box-shadow: var(--round-shadow-white);
   transition: 0.5s;
 }
 

@@ -3,3 +3,13 @@
     flex-direction: column;
     gap: 10px;
   }
+
+  .text__container_p{
+  font-size: 16px; /* Размер шрифта */
+  line-height: 1.5; /* Междустрочный интервал */
+  color: var(--third-text-color); /* Цвет текста */
+  display: flex;
+  flex-direction: column;
+  }
+
+  .text__container_p span::first-letter{ margin-left: 10px; font-weight: bold;}
