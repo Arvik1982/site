@@ -6,7 +6,8 @@ type TProps={
 export default function BackGroundSvg({color="rgba(75, 164, 208, 1)",rotation}:TProps){
     return(
         <svg
-        style={rotation?{transform: `rotate(${rotation}deg)`}:{opacity:'0.6'}}
+        
+               style={rotation?{transform: `rotate(${rotation}deg)`}:{opacity:'0.5', zIndex:'110'}}
         className={styles.triangle}
         viewBox="0 0 200 200"
         preserveAspectRatio="none"

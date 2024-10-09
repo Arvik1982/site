@@ -1,7 +1,7 @@
 .about__info_button {
     font-family: "MainFont";
     font-weight: bold;
-    z-index: 100;
+    z-index: 110;
     color: var( --main-button-color);
     background-color: var(--accent-background-color);
     padding: 9px;

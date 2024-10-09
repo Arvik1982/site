@@ -4,6 +4,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import StoreProvider from "./storeProvider";
 import DisplayComponent from "./components/DisplayComponent/DisplayComponent";
+import topBGround from './public/dev_img_2.jpg'
+import itemBGround from './public/dev_img.jpg'
 
 export const metadata: Metadata = {
   title: "Example app",
@@ -21,15 +23,16 @@ export default function RootLayout({
       <link
           rel="preload"
           as="image"
-          href='./public/gig_2.gif'
-          sizes="180x180"
+          href={topBGround.src}
+         
         />
-             <link
+          <link
           rel="preload"
           as="image"
-          href='./public/dev_img_2.jpg'
-          sizes="180x180"
+          href={itemBGround.src}
+         sizes="300x300"
         />
+   
       </head>
       <body>
         <StoreProvider>

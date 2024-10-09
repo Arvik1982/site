@@ -2,10 +2,11 @@
   position: relative;
   width: 185px;
   height: 185px;
+  z-index: 111;
 }
 .about__info_avatar {
   position: absolute;
-  z-index: 1000;
+  z-index: 110;
   display: flex;
   align-items: center;
   justify-content: center;
