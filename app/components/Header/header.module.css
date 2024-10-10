@@ -1,65 +1,73 @@
-.header__container{
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 1001;
-    background-color: var(--transparent-background-color);
-    height: 50px;
-    
-   
-}
-.header__container_logo{
-    width: 50px;
-    height: auto;
+.header__container {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1001;
+  background-color: var(--transparent-background-color-2);
+  height: 50px;
+ 
   
 }
-.header__container_right{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-end;
-    gap:15px
+.header__container::before{
+    content: '';
+    background-image: url(../../public/dev_img_5.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-.header__container_contacts{
-    color: var(--third-text-color);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    flex-direction: column;
-    height: 40px;  
 
+.header__container_logo {
+    
+  min-width: 0px;
+  height: 40px;  
+}
+.header__container_right {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.header__container_contacts {
+  color: var(--third-text-color);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 40px;
 }
 
 .header__container_nav {
-    position: relative; 
-    border: var(--main-background-color);
-    border-radius: 4px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    width: 40px;
-    justify-content: center;
-    background-color: #fff;
+  position: relative;
+  border: var(--main-background-color);
+  border-radius: 4px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 40px;
+  justify-content: center;
+  background-color: var(--accent-background-color)
 }
 
 .burger__button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-  
-    
-
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .burger__line {
-    width: 25px; /* Ширина линии */
-    height: 4px; /* Высота линии */
-    background-color:var(--main-button-color); /* Цвет линии */
-    margin: 2px 0; /* Отступ между линиями */
+  width: 25px; /* Ширина линии */
+  height: 4px; /* Высота линии */
+  background-color: var(--main-button-color); /* Цвет линии */
+  margin: 2px 0; /* Отступ между линиями */
 }
-
