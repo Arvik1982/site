@@ -6,8 +6,9 @@
 :root {
   --main-background-color: #f0faff; /* Основной цвет фона */
   --second-background-color: #ffff;
-  --transparent-background-color: #e3f4fccc;
+  --transparent-background-color: #68a8ee40;
   --transparent-background-color-2: #504186c7;
+
   --accent-background-color: rgba(240, 250, 255, 1);
   --accent-color: #eeaf68;
   --main-text-color: #4ba4d0; /* Основной цвет текста */
@@ -47,7 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--main-background-color);
+  background-color: var(--transparent-background-color);
 }
 
 * {
@@ -63,6 +64,6 @@ a {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    background-color: var(--main-background-color);
+    background-color: var(--transparent-background-color);
   }
 }

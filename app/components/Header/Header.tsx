@@ -1,11 +1,9 @@
 "use client";
 import styles from "./header.module.css";
 import { useState } from "react";
-import LogoTop from "../Logo/Logo";
-import Mail from "../Contacts/_components/Mail";
-import Telegram from "../Contacts/_components/Telegram";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import BurgerNavUlList from "../Navigation/BurgerNavUlList";
+import MainButton from "../UI/MainButton/MainButton";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,17 +29,26 @@ export default function Header() {
       className={`${styles.header__container}`}
     >
       <div
-        style={isAtTop ? { width: "100px" } : {}}
+        // style={isAtTop ? { width: "100px" } : {}}
         className={styles.header__container_logo}
       >
-        <LogoTop />
-        
+        <div
+          style={
+           !isAtTop
+              ? { position: "absolute", transform: 'translateX(-110%)',   
+                transition: 'transform 0.3s ease' }
+              : { position: "absolute", transform: 'translateX(0%)' ,  
+                transition: 'transform 0.3s ease' }
+          }
+        >
+         <MainButton text="Оставить заявку" />
+        </div>
       </div>
       <section className={styles.header__container_right}>
-        <div className={styles.header__container_contacts}>
-          <Mail size={"s"} />
+        {/* <div className={styles.header__container_contacts}>
+          <Mail color="red" size={"s"} />
           <Telegram size={"s"} />
-        </div>
+        </div> */}
         <nav className={styles.header__container_nav}>
           <button onClick={toggleMenu} className={styles.burger__button}>
             {/* Иконка бургер-меню */}
@@ -51,7 +58,7 @@ export default function Header() {
           </button>
         </nav>
       </section>
-<BurgerNavUlList isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
+      <BurgerNavUlList isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </header>
   );
 }
