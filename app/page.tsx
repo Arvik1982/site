@@ -111,13 +111,8 @@ export default function Home() {
           <MainButton onClick={handleContactsFocus} text={"Связаться"} />
         </section>
       )}
-
-      <HomeSectionWrapper>
-        <BackGroundSvg rotation="180" color="#504186" />
-        <h2 className={styles.info__text_advantages}>Мои преимущества:</h2>
-        <AdvantagesContainer />
-      </HomeSectionWrapper>
-      <HomeSectionWrapper>
+            <HomeSectionWrapper>
+            
         {" "}
         <h2 ref={refAbout} tabIndex={0} className={styles.info__text}>
           Об авторе:
@@ -125,6 +120,13 @@ export default function Home() {
         <BackGroundSquareSvg />
         <AboutCompany />
       </HomeSectionWrapper>
+
+      <HomeSectionWrapper>
+      <BackGroundSvg rotation="180" color="#504186" />
+        <h2 className={styles.info__text_advantages}>Мои преимущества:</h2>
+        <AdvantagesContainer />
+      </HomeSectionWrapper>
+
       <HomeSectionWrapper>
         <h2 className={styles.info__text}>Портфолио:</h2>
         <BackGroundSquareSvg />

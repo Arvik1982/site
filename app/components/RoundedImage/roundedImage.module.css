@@ -1,8 +1,22 @@
 .container__picture {
   position: relative;
+  /* position: "absolute"; */
+  transform: translateX(300%);
+  transition: transform 0.3s ease;
   width: 185px;
   height: 185px;
   z-index: 111;
+  opacity: 0;
+}
+.container__picture_load{
+  position: relative;
+  /* position: "absolute"; */
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  width: 185px;
+  height: 185px;
+  z-index: 111;
+  opacity: 1;
 }
 .about__info_avatar {
   position: absolute;
@@ -31,6 +45,29 @@
 }
 
 .container__picture_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  position: absolute;
+  z-index: 1002;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* background-color: var(--transparent-background-color); */
+  box-shadow: var(--round-shadow-white);
+  transition: 0.5s;
+
+    position: "absolute"; 
+    transform: translateX(150%);
+    transition: transform 0.3s ease;
+}
+
+.picture__button_load {
+  position: "absolute";
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+
   display: flex;
   align-items: center;
   justify-content: center;
